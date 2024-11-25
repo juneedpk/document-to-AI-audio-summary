@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: sound-to-audio-ai
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn sound-v2:app
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.7
